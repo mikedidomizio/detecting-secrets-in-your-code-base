@@ -1,1 +1,1 @@
-export const AWS_ACCESS_KEY_ID=process.env.AWS_ACCESS_KEY_ID
+export const AWS_ACCESS_KEY_ID="ASIA1234567890123456"
