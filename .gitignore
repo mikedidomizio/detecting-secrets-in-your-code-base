@@ -1,1 +1,4 @@
 .idea
+
+# temp files
+gitleaks-report.json
