@@ -8,8 +8,7 @@
 
 ```bash
 docker build -t git-secrets:latest -f git-secrets.dockerfile .
-
-docker run -v ${PWD}/git-secrets.js:/app/git-secrets.js git-secrets:latest --scan
+docker run -v ${PWD}:/app git-secrets:latest --scan-history
 ```
 
 ## gitleaks/gitleaks
@@ -20,5 +19,5 @@ docker run -v ${PWD}/git-secrets.js:/app/git-secrets.js git-secrets:latest --sca
 
 ```bash
 docker pull zricethezav/gitleaks:latest
-docker run -v ${PWD}:/path zricethezav/gitleaks:latest protect --source="/path" -v
+docker run -v ${PWD}:/path zricethezav/gitleaks:latest detect --source="/path" -v
 ```

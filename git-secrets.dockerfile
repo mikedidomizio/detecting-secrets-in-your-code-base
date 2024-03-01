@@ -7,14 +7,4 @@ RUN git clone https://github.com/awslabs/git-secrets && cd git-secrets && make i
 
 WORKDIR /app
 
-RUN git init && git config --global user.email "you@example.com" && git config --global user.name "Your Name"
-
-RUN git secrets --register-aws --global
-
-# On running the container we add all files with git, which will then scan all files by `git secrets`
-RUN printf "#!/bin/bash \n \
-\n \
-git add -A && git secrets \"\$1\"" > /app/commands.sh
-RUN ["chmod", "+x", "/app/commands.sh"]
-ENTRYPOINT ["/app/commands.sh"]
-
+ENTRYPOINT ["git", "secrets"]
