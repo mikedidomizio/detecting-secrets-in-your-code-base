@@ -25,8 +25,6 @@ docker run -v ${PWD}:/app git-secrets:latest --scan-history
 #### Testing with Docker
 
 ```shell
-docker pull zricethezav/gitleaks:latest
-
 docker run -v ${PWD}:/path zricethezav/gitleaks:latest [COMMAND] [OPTIONS]
 
 # ex.
@@ -44,4 +42,13 @@ docker run -v ${PWD}:/app detect-secrets:latest [COMMAND]
 
 # ex.
 docker run -v ${PWD}:/app -it detect-secrets:latest scan
+```
+
+### [trufflesecurity/trufflehog](https://github.com/trufflesecurity/trufflehog)
+
+#### Testing with Docker
+
+```shell
+# for MacOS
+docker run --platform linux/arm64 -v $PWD:/pwd trufflesecurity/trufflehog:latest filesystem /pwd
 ```
