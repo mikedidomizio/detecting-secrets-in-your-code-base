@@ -31,6 +31,15 @@ docker run -v ${PWD}:/path zricethezav/gitleaks:latest [COMMAND] [OPTIONS]
 docker run -v ${PWD}:/path zricethezav/gitleaks:latest detect --source="/path" -v
 ```
 
+### [trufflesecurity/trufflehog](https://github.com/trufflesecurity/trufflehog)
+
+#### Testing with Docker
+
+```shell
+# for MacOS
+docker run --platform linux/arm64 -v $PWD:/pwd trufflesecurity/trufflehog:latest filesystem /pwd
+```
+
 ### [Yelp/detect-secrets](https://github.com/Yelp/detect-secrets)
 
 #### Testing with Docker
@@ -42,13 +51,4 @@ docker run -v ${PWD}:/app detect-secrets:latest [COMMAND]
 
 # ex.
 docker run -v ${PWD}:/app -it detect-secrets:latest scan
-```
-
-### [trufflesecurity/trufflehog](https://github.com/trufflesecurity/trufflehog)
-
-#### Testing with Docker
-
-```shell
-# for MacOS
-docker run --platform linux/arm64 -v $PWD:/pwd trufflesecurity/trufflehog:latest filesystem /pwd
 ```
